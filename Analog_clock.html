@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Digital</title>
+    <style>
+
+        .clock{
+            height: 300px;
+            width: 300px;
+            border: 8px solid blue;
+            position: relative;
+            top: 120px;
+            left: 510px;
+            border-radius: 160px;
+        }
+        .dot{
+            height: 0px;
+            width: 0px;
+            border: 5px solid black;
+            position: relative;
+            top: 146px;
+            left: 145.5px;
+            border-radius: 160px;
+
+        }
+        .hour{
+            font-size: 22px;
+            font-weight: bold;
+            
+        }
+        .hour-1{
+            position: relative;
+            top: 12px;
+            left: 219px;
+        }
+        .hour-2{
+            position: relative;
+            top: 37px;
+            left: 265px;
+        }
+        .hour-3{
+            position: relative;
+            top: 76px;
+            left: 283px;
+        }
+        .hour-4{
+            position: relative;
+            top: 112.2px;
+            left: 268px;
+        }
+        .hour-5{
+            position: relative;
+            top: 138px;
+            left: 225px;
+        }
+        .hour-6{
+            position: relative;
+            top: 135px;
+            left: 146px;
+        }
+        .hour-7{
+            position: relative;
+            top: 89px;
+            left: 71px;
+        }
+        .hour-8{
+            position: relative;
+            top: 9px;
+            left: 23px;
+        }
+        
+        .hour-9{
+            position: relative;
+            top: -79px;
+            left: 5px;
+        }
+        .hour-10{
+            position: relative;
+            top: -171px;
+            left: 20px;
+        }
+        .hour-11{
+            position: relative;
+            top: -248px;
+            left: 65px;
+        }
+        .hour-12{
+            position: relative;
+            top: -295px;
+            left: 140px;
+        }
+        .hour-needle{
+            height: 90px;
+            width: 0px;
+            border-left: 3px solid black;
+            position: absolute;
+            top: 59px;
+            left: 149.2px;
+        }
+        .minute-needle{
+            height: 110px;
+            width: 0px;
+            border-left: 3px solid black;
+            position: absolute;
+            top: 37px;
+            left: 149.2px;
+        }
+        .seconds-needle{
+            height: 122px;
+            width: 0px;
+            border-left: 3px solid black;
+            position: absolute;
+            top: 27px;
+            left: 149.2px;
+
+        }
+        p{
+            transform:rotate(180deg);
+        }
+        #h{
+            position: absolute;
+            top: -32px;
+            left: -7px;
+        }
+        #m{
+            position: absolute;
+            top: -32px;
+            left: -7px;
+        }
+
+
+    </style>
+    </head>
+<body>
+    <div class="clock">
+        <div class="dot"></div>
+            
+        
+        <div class="hour">
+            
+            <div class="hour-1">1</div>
+            <div class="hour-2">2</div>
+            <div class="hour-3">3</div>
+            <div class="hour-4">4</div>
+            <div class="hour-5">5</div>
+            <div class="hour-6">6</div>
+            <div class="hour-7">7</div>
+            <div class="hour-8">8</div>
+            <div class="hour-9">9</div>
+            <div class="hour-10">10</div>
+            <div class="hour-11">11</div>
+            <div class="hour-12">12</div>
+            <div class="hour-dial">
+                <div id="ho" class="hour-needle"><p id="h">v</p></div>
+            
+            <div id="mi" class="minute-needle"><p id="m">v</p></div>
+            
+            <div id="se" class="seconds-needle"></div>
+        </div>
+           
+        </div>
+
+    </div>
+    <script>
+
+        var second = 0;
+        var minute = 0;
+        var hour = 0;
+        var d = new Date();
+
+        setInterval(
+            function(){
+                d = new Date();
+                second = d.getSeconds() * 6;
+                minute = d.getMinutes() * 6;
+                hour = d.getHours() * 30;
+
+                document.getElementById("se").style.transform = "rotate(" + second + "deg)";
+                document.getElementById("mi").style.transform = "rotate(" + minute + "deg)";
+                document.getElementById("ho").style.transform = "rotate(" + hour + "deg)";
+
+            },1000
+
+        )
+
+
+    </script>
+</body>
+</html>
